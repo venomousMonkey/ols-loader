@@ -4,7 +4,7 @@ const CardSkeleton: React.FC = () => {
   return (
     <div className="card-skeleton-wrapper">
       <img
-        src="/ols-loader/skeleton-dance-skeleton.gif"
+        src={`${import.meta.env.BASE_URL}skeleton-dance-skeleton.gif`}
         className="skeleton-gif left"
         alt=""
         aria-hidden="true"
@@ -42,7 +42,7 @@ const CardSkeleton: React.FC = () => {
       </div>
 
       <img
-        src="/ols-loader/skeleton-dance-skeleton.gif"
+        src={`${import.meta.env.BASE_URL}skeleton-dance-skeleton.gif`}
         className="skeleton-gif right"
         alt=""
         aria-hidden="true"
