@@ -1,14 +1,10 @@
 import React from 'react'
+import skeletonGif from '../assets/skeleton-dance-skeleton.gif'
 
 const CardSkeleton: React.FC = () => {
   return (
     <div className="card-skeleton-wrapper">
-      <img
-        src={`${import.meta.env.BASE_URL}skeleton-dance-skeleton.gif`}
-        className="skeleton-gif left"
-        alt=""
-        aria-hidden="true"
-      />
+      <img src={skeletonGif} className="skeleton-gif left" alt="" aria-hidden="true" />
 
       <div className="card-skeleton" role="status" aria-label="Loading account card">
         <div className="skeleton skeleton--title" />
@@ -41,12 +37,7 @@ const CardSkeleton: React.FC = () => {
         </div>
       </div>
 
-      <img
-        src={`${import.meta.env.BASE_URL}skeleton-dance-skeleton.gif`}
-        className="skeleton-gif right"
-        alt=""
-        aria-hidden="true"
-      />
+      <img src={skeletonGif} className="skeleton-gif right" alt="" aria-hidden="true" />
     </div>
   )
 }
