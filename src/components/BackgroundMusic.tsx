@@ -13,7 +13,6 @@ const BackgroundMusic: React.FC = () => {
   const playerRef = useRef<any>(null)
   const [ready, setReady] = useState(false)
   const [playing, setPlaying] = useState(false)
-  const buttonRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
     if (window.YT && window.YT.Player) {
@@ -73,19 +72,7 @@ const BackgroundMusic: React.FC = () => {
     playerRef.current.pauseVideo()
   }
 
-  useEffect(() => {
-    const t = setTimeout(() => {
-      const btn = buttonRef.current
-      if (btn) {
-        const ev = new MouseEvent('click', { bubbles: true, cancelable: true, view: window })
-        btn.dispatchEvent(ev)
-      } else if (playerRef.current && ready) {
-        try { playerRef.current.playVideo() } catch (e) { }
-      }
-    }, 800)
 
-    return () => clearTimeout(t)
-  }, [ready])
 
   return (
     <div aria-hidden="false">
@@ -95,7 +82,6 @@ const BackgroundMusic: React.FC = () => {
       />
 
       <button
-        ref={buttonRef}
         onClick={() => (playing ? handlePause() : handlePlay())}
         style={{
           position: 'fixed',
